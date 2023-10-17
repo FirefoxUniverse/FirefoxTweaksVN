@@ -69,6 +69,9 @@ user_pref("browser.startup.preXulSkeletonUI", false);
 //Enable Alt-Tab-like switch, Ctrl+Tab
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
+//Enable userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 3600000);
 user_pref("browser.sessionstore.interval", 3600000);
