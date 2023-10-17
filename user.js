@@ -142,6 +142,9 @@ user_pref("image.mem.decode_bytes_at_a_time", 32768);
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
 
+//Enable Alt-Tab-like switch, Ctrl+Tab
+user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
+
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 3600000);
 user_pref("browser.sessionstore.interval", 3600000);
