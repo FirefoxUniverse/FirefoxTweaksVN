@@ -134,6 +134,10 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false);
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
 
+//Snappier tooltips
+user_pref("ui.tooltipDelay", 60); 
+user_pref("browser.overlink-delay", 10); 
+
 //Enable Alt-Tab-like switch, Ctrl+Tab
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
