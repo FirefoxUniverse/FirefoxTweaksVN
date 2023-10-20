@@ -63,6 +63,82 @@ user_pref("browser.display.document_color_use", 2);
 user_pref("browser.display.use_document_fonts", 0);
 user_pref("browser.display.use_system_colors", false);*/
 
+/****************************************************************************
+ * SECTION: NETWORK                                                         *
+****************************************************************************/
+
+// PREF: use bigger packets
+// Reduce Firefox's CPU usage by requiring fewer application-to-driver data transfers.
+// However, it does not affect the actual packet sizes transmitted over the network.
+// [1] https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
+user_pref("network.buffer.cache.size", 262144); // 256 kb; default=32768 (32 kb)
+user_pref("network.buffer.cache.count", 128); // default=24
+
+// PREF: increase TLS token caching 
+user_pref("network.ssl_tokens_cache_capacity", 10240); // default=2048; more TLS token caching (fast reconnects)
+
+/****************************************************************************
+ * SECTION: SECUREFOX                                                       *
+****************************************************************************/
+
+/** WEBRTC ***/
+//user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
+//user_pref("media.peerconnection.ice.default_address_only", true);
+
+/** SAFE BROWSING ***/
+user_pref("browser.safebrowsing.downloads.remote.enabled", false);
+
+/** MOZILLA ***/
+user_pref("identity.fxaccounts.enabled", false);
+user_pref("browser.tabs.firefox-view", false);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
+user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
+user_pref("permissions.manager.defaultsUrl", "");
+user_pref("webchannel.allowObject.urlWhitelist", "");
+
+/** TELEMETRY ***/
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("toolkit.telemetry.server", "data:,");
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.coverage.opt-out", true);
+user_pref("toolkit.coverage.opt-out", true);
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("browser.discovery.enabled", false);
+user_pref("breakpad.reportURL", "");
+user_pref("browser.tabs.crashReporting.sendReport", false);
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+user_pref("captivedetect.canonicalURL", "");
+user_pref("network.captive-portal-service.enabled", false);
+user_pref("network.connectivity-service.enabled", false);
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("browser.ping-centre.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+
+/** GFX ***/
+//user_pref("gfx.canvas.accelerated", true); // enable if using a dedicated GPU on WINDOWS
+user_pref("gfx.canvas.accelerated.cache-items", 4096);
+user_pref("gfx.canvas.accelerated.cache-size", 512);
+user_pref("gfx.content.skia-font-cache-size", 20);
+
+/** MEDIA CACHE ***/
+user_pref("media.memory_cache_max_size", 65536);
+user_pref("media.cache_readahead_limit", 7200);
+user_pref("media.cache_resume_threshold", 3600);
+
+/** IMAGE CACHE ***/
+user_pref("image.mem.decode_bytes_at_a_time", 32768);
+
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
 
