@@ -1,18 +1,41 @@
 // ==UserScript==
 // @name        Handlers Helper
 // @include       *://*/*
-// @grant       none
-// @version     2.0
+// @grant       GM_getValue
+// @grant       GM_setValue
+// @grant       GM_registerMenuCommand
+// @version     2.1
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
 // ==/UserScript==
 
-const livechat = false;
+const guide = 'Value: pipe ytdl stream mpv iptv';
 const live_window_width = 400;
 const live_window_height = 640;
-const total_direction = 8;
-const hlsdomain = ['cdn.animevui.com']
+const total_direction = 4;
+
+var livechat = false;
+var hlsdomain = 'cdn.animevui.com';
+var UP = 'pipe';
+var DOWN = 'ytdl';
+var LEFT = 'stream';
+var RIGHT = 'mpv';
+var UP = GM_getValue('UP', UP);
+var DOWN = GM_getValue('DOWN', DOWN);
+var LEFT = GM_getValue('LEFT', LEFT);
+var RIGHT = GM_getValue('RIGHT', RIGHT);
+var hlsdomain = GM_getValue('hlsdomain', hlsdomain);
+var livechat = GM_getValue('livechat', livechat);
+GM_registerMenuCommand('↑', function() {var p = window.prompt(guide, UP);if(!p){return;};GM_setValue('UP', p);});
+GM_registerMenuCommand('↓', function() {var p = window.prompt(guide, DOWN);if(!p){return;};GM_setValue('DOWN', p);});
+GM_registerMenuCommand('←', function() {var p = window.prompt(guide, LEFT);if(!p){return;};GM_setValue('LEFT', p);});
+GM_registerMenuCommand('→', function() {var p = window.prompt(guide, RIGHT);if(!p){return;};GM_setValue('RIGHT', p);});
+GM_registerMenuCommand('HLS Force', function() {var p = window.prompt('Example: 1.com,2.com,3.com,4.com', hlsdomain);if(!p){return;};GM_setValue('hlsdomain', p);});
+GM_registerMenuCommand('Live Chat', function() {var p = window.prompt('true or false', livechat);if(!p){return;};if(p === 'true'){p=true}else{p=false};GM_setValue('livechat', p);});
+console.log(UP, DOWN, LEFT, RIGHT, hlsdomain, livechat);
+
+var hlsdomain = hlsdomain.split(',');
 var collected_urls = {};
 function GM_getParentByTagName(el, tagName) {
   tagName = tagName.toLowerCase();
@@ -38,10 +61,15 @@ function attachDrag(elem) {
     var url = '';
     var subs = '';
     var s = '';
+    var app = 'play';
+    var hls = false;
     console.log(attr, type)
     for (i in hlsdomain) {
       if (attr.indexOf(hlsdomain[i]) != -1) {
-        attr = attr.replace(/https?/, 'hls');
+        if (type == 'stream') {
+          attr = attr.replace(/https?:/, 'hls:');
+        }
+        hls = true;
       }
 
     }
@@ -69,14 +97,21 @@ function attachDrag(elem) {
         var s = url;
     }
     collected_urls = {};
-    var app = 'play';
-    if (type != 'vid') {
-      var app = type.toLowerCase();
+    if (type == 'pipe') {
+      app = 'mpvy';
+    }
+    else if (type == 'mpv' || type == 'vid') {
+      app = 'play';
+    } else {
+      app = type;
     }
     var bs = GM_btoaUrl(s);
     var url2 = 'mpv://' + app + '/' + bs + '/' + "?referer=" + GM_btoaUrl(location.href);
     if (subs != '') {
       url2 = url2 + '?subs=' + GM_btoaUrl(subs);
+    }
+    if (hls == true) {
+        url2 = url2 + '?hls=1';
     }
     //alert(url2);
     if (app == 'stream' && livechat == true) {
@@ -160,20 +195,20 @@ function attachDrag(elem) {
 
       switch (+direction) {
         case DirectionEnum.RIGHT:
-          console.log('MPV: ' + targetHref);
-          EA(targetHref, 'vid');
+          console.log('RIGHT: ' + targetHref);
+          EA(targetHref, RIGHT);
           break;
         case DirectionEnum.LEFT:
-          console.log('Streamlink: ' + targetHref);
-          EA(targetHref, 'stream');
+          console.log('LEFT: ' + targetHref);
+          EA(targetHref, LEFT);
           break;
         case DirectionEnum.UP:
-          console.log('Pipe: ' + targetHref);
-          EA(targetHref, 'mpvy');
+          console.log('UP: ' + targetHref);
+          EA(targetHref, UP);
           break;
         case DirectionEnum.DOWN:
-          console.log('YTDL: ' + targetHref);
-          EA(targetHref, 'ytdl');
+          console.log('DOWN: ' + targetHref);
+          EA(targetHref, DOWN);
           break;
 
         case DirectionEnum.UP_LEFT:
