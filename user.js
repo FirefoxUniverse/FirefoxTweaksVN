@@ -6,20 +6,8 @@ user_pref("browser.display.background_color", "#3f3f3f");
 user_pref("browser.display.foreground_color", "#ffffff");
 user_pref("browser.anchor_color", "#ffcc99");
 user_pref("browser.visited_color", "#cc99ff");
-
-user_pref("browser.active_color.dark", "blue");
-user_pref("browser.display.background_color.dark", "#ffffff");
-user_pref("browser.display.foreground_color.dark", "#ffffff");
-user_pref("browser.anchor_color.dark", "#800040");
-user_pref("browser.visited_color.dark", "#bba66f");
-
-user_pref("browser.display.use_focus_colors", true);
-user_pref("browser.display.focus_background_color", "#b4b4b4");
-user_pref("browser.display.focus_text_color", "#000000");
-
-user_pref("browser.display.document_color_use", 2);
-user_pref("browser.display.use_document_fonts", 0);
-user_pref("browser.display.use_system_colors", false);*/
+user_pref("layout.css.forced-colors.enabled, false);
+*/
 
 //Gray Mode
 /*user_pref("browser.active_color", "blue");
@@ -27,20 +15,8 @@ user_pref("browser.display.background_color", "#cccccc");
 user_pref("browser.display.foreground_color", "#000000");
 user_pref("browser.anchor_color", "#800040");
 user_pref("browser.visited_color", "#b93d00");
-
-user_pref("browser.active_color.dark", "blue");
-user_pref("browser.display.background_color.dark", "#ffffff");
-user_pref("browser.display.foreground_color.dark", "#ffffff");
-user_pref("browser.anchor_color.dark", "#800040");
-user_pref("browser.visited_color.dark", "#bba66f");
-
-user_pref("browser.display.use_focus_colors", false);
-user_pref("browser.display.focus_background_color", "#b4b4b4");
-user_pref("browser.display.focus_text_color", "#000000");
-
-user_pref("browser.display.document_color_use", 2);
-user_pref("browser.display.use_document_fonts", 0);
-user_pref("browser.display.use_system_colors", false);*/
+user_pref("layout.css.forced-colors.enabled, false);
+*/
 
 //Dark Brown Mode
 /*user_pref("browser.active_color", "blue");
@@ -48,20 +24,8 @@ user_pref("browser.display.background_color", "#3f3f3f");
 user_pref("browser.display.foreground_color", "#c9c9bb");
 user_pref("browser.anchor_color", "#dca3a3");
 user_pref("browser.visited_color", "#bba66f");
-
-user_pref("browser.active_color.dark", "blue");
-user_pref("browser.display.background_color.dark", "#ffffff");
-user_pref("browser.display.foreground_color.dark", "#ffffff");
-user_pref("browser.anchor_color.dark", "#800040");
-user_pref("browser.visited_color.dark", "#bba66f");
-
-user_pref("browser.display.use_focus_colors", true);
-user_pref("browser.display.focus_background_color", "#b4b4b4");
-user_pref("browser.display.focus_text_color", "#000000");
-
-user_pref("browser.display.document_color_use", 2);
-user_pref("browser.display.use_document_fonts", 0);
-user_pref("browser.display.use_system_colors", false);*/
+user_pref("layout.css.forced-colors.enabled, false);
+*/
 
 /****************************************************************************
  * SECTION: NETWORK                                                         *
