@@ -116,18 +116,6 @@ user_pref("network.http.rcwn.enabled", false);
 user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
 user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
 
-/*** [SECTION 0200]: GEOLOCATION / LANGUAGE / LOCALE ***/
-user_pref("_user.js.parrot", "0200 syntax error: the parrot's definitely deceased!");
-/* 0201: use Mozilla geolocation service instead of Google if permission is granted [FF74+]
- * Optionally enable logging to the console (defaults to false) ***/
-user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
-   // user_pref("geo.provider.network.logging.enabled", true); // [HIDDEN PREF]
-/* 0202: disable using the OS's geolocation service ***/
-user_pref("geo.provider.ms-windows-location", false); // [WINDOWS]
-user_pref("geo.provider.use_corelocation", false); // [MAC]
-user_pref("geo.provider.use_gpsd", false); // [LINUX]
-user_pref("geo.provider.use_geoclue", false); // [FF102+] [LINUX]
-
 /*** [SECTION 0300]: QUIETER FOX ***/
 user_pref("_user.js.parrot", "0300 syntax error: the parrot's not pinin' for the fjords!");
 /** RECOMMENDATIONS ***/
@@ -140,6 +128,9 @@ user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
  * [SETTING] Privacy & Security>Firefox Data Collection & Use>Allow Firefox to make personalized extension recommendations
  * [1] https://support.mozilla.org/kb/personalized-extension-recommendations ***/
 user_pref("browser.discovery.enabled", false);
+/* 0323: disable shopping experience [FF116+]
+ * [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1840156#c0 ***/
+user_pref("browser.shopping.experience2023.enabled", false); // [DEFAULT: false]
 
 /** TELEMETRY ***/
 /* 0330: disable new data submission [FF41+]
