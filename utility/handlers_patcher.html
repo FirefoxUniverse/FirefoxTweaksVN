@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" style="width:100%;height:100%">
+
+<head>
+</head>
+
+<body style="width:100%;height:100%">
+
+<textarea id="hp" style="width:100%;height:100%"></textarea>
+
+<script>
+var ele = document.getElementById('hp');
+if (ele.addEventListener) {
+  ele.addEventListener('input', function() {
+    console.log(ele.value);
+    var json = JSON.parse(ele.value);
+    json["schemes"]["mpv"] = {"action":2,"handlers":[{"name":"MPV","path":"D:\\mpv\\mpv.exe"}]}
+    
+    ele.value = JSON.stringify(json);
+  }, false);
+} else if (ele.attachEvent) {
+  ele.attachEvent('onpropertychange', function() {
+    // IE-specific event handling code
+  });
+}
+</script>
+</body>
+
+</html>
