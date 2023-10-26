@@ -16,7 +16,7 @@ if (ele.addEventListener) {
     var json = JSON.parse(ele.value);
     json["schemes"]["mpv"] = {"action":2,"handlers":[{"name":"MPV","path":"D:\\mpv\\mpv.exe"}]}
     
-    ele.value = JSON.stringify(json);
+    ele.value = JSON.stringify(json, null, 2);
   }, false);
 } else if (ele.attachEvent) {
   ele.attachEvent('onpropertychange', function() {
