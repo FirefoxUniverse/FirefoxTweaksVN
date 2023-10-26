@@ -4,11 +4,13 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     2.1
+// @version     2.2
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
 // ==/UserScript==
+
+//'iptv'
 
 const guide = 'Value: pipe ytdl stream mpv iptv';
 const live_window_width = 400;
@@ -100,9 +102,13 @@ function attachDrag(elem) {
     if (type == 'pipe') {
       app = 'mpvy';
     }
+    else if (type == 'iptv') {
+      app = 'list';
+    }
     else if (type == 'mpv' || type == 'vid') {
       app = 'play';
-    } else {
+    }
+    else {
       app = type;
     }
     var bs = GM_btoaUrl(s);
@@ -113,7 +119,6 @@ function attachDrag(elem) {
     if (hls == true) {
         url2 = url2 + '?hls=1';
     }
-    //alert(url2);
     if (app == 'stream' && livechat == true) {
         var nurl = new URL(url);
         if (nurl.href.indexOf('www.youtube.com/watch') != -1 || nurl.href.indexOf('m.youtube.com/watch') != -1) {
@@ -123,6 +128,7 @@ function attachDrag(elem) {
         window.open("https://www.twitch.tv/popout" + nurl.pathname + "/chat?popout=", "", "fullscreen=no,toolbar=no,titlebar=no,menubar=no,location=no,width=" + live_window_width + ",height=" + live_window_height)
         }
     }
+    console.log(url2);
     location.href = url2;
   }
 
