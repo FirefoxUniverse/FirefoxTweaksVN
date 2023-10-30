@@ -11,12 +11,14 @@
 <script>
 var ele = document.getElementById('hp');
 if (ele.addEventListener) {
-  ele.addEventListener('input', function() {
+  ele.addEventListener('input', function(e) {
     console.log(ele.value);
     var json = JSON.parse(ele.value);
     json["schemes"]["mpv"] = {"action":2,"handlers":[{"name":"MPV","path":"D:\\mpv\\mpv.exe"}]}
     
     ele.value = JSON.stringify(json, null, 2);
+    this.focus();
+    this.select()
   }, false);
 } else if (ele.attachEvent) {
   ele.attachEvent('onpropertychange', function() {
