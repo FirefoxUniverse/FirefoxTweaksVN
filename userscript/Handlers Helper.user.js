@@ -4,7 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     2.3
+// @version     2.4
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -30,15 +30,15 @@ var RIGHT = GM_getValue('RIGHT', RIGHT);
 var hlsdomain = GM_getValue('hlsdomain', hlsdomain);
 var livechat = GM_getValue('livechat', livechat);
 var total_direction = GM_getValue('total_direction', total_direction);
-GM_registerMenuCommand('↑', function() {var p = window.prompt(guide, UP);if(!p){return;};GM_setValue('UP', p);});
-GM_registerMenuCommand('↓', function() {var p = window.prompt(guide, DOWN);if(!p){return;};GM_setValue('DOWN', p);});
-GM_registerMenuCommand('←', function() {var p = window.prompt(guide, LEFT);if(!p){return;};GM_setValue('LEFT', p);});
-GM_registerMenuCommand('→', function() {var p = window.prompt(guide, RIGHT);if(!p){return;};GM_setValue('RIGHT', p);});
+GM_registerMenuCommand('↑: ' + UP.toString(), function() {var p = window.prompt(guide, UP);if(!p){return;};GM_setValue('UP', p);window.location.reload();});
+GM_registerMenuCommand('↓: ' + DOWN.toString(), function() {var p = window.prompt(guide, DOWN);if(!p){return;};GM_setValue('DOWN', p);window.location.reload();});
+GM_registerMenuCommand('←: ' + LEFT.toString(), function() {var p = window.prompt(guide, LEFT);if(!p){return;};GM_setValue('LEFT', p);window.location.reload();});
+GM_registerMenuCommand('→: ' + RIGHT.toString(), function() {var p = window.prompt(guide, RIGHT);if(!p){return;};GM_setValue('RIGHT', p);window.location.reload();});
 GM_registerMenuCommand('HLS Force', function() {var p = window.prompt('Example: 1.com,2.com,3.com,4.com', hlsdomain);if(!p){return;};GM_setValue('hlsdomain', p);});
-GM_registerMenuCommand('Live Chat: ' + livechat.toString(), function() {var v = livechat;if(v == true){GM_setValue('livechat', false);}else{GM_setValue('livechat', true);};window.location.reload()});
-GM_registerMenuCommand('Total Direction: ' + total_direction.toString(), function() {var v = total_direction;if(v == 4){GM_setValue('total_direction', 8);}else{GM_setValue('total_direction', 4);};window.location.reload()});
+GM_registerMenuCommand('Live Chat: ' + livechat.toString(), function() {var v = livechat;if(v == true){GM_setValue('livechat', false);}else{GM_setValue('livechat', true);};window.location.reload();});
+GM_registerMenuCommand('Total Direction: ' + total_direction.toString(), function() {var v = total_direction;if(v == 4){GM_setValue('total_direction', 8);}else{GM_setValue('total_direction', 4);};window.location.reload();});
 
-console.log(UP, DOWN, LEFT, RIGHT, hlsdomain, livechat);
+console.log(UP, DOWN, LEFT, RIGHT, hlsdomain, livechat, total_direction);
 
 var hlsdomain = hlsdomain.split(',');
 var collected_urls = {};
