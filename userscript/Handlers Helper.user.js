@@ -4,7 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     2.2
+// @version     2.3
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -15,8 +15,8 @@
 const guide = 'Value: pipe ytdl stream mpv iptv';
 const live_window_width = 400;
 const live_window_height = 640;
-const total_direction = 4;
 
+var total_direction = 4;
 var livechat = false;
 var hlsdomain = 'cdn.animevui.com';
 var UP = 'pipe';
@@ -29,12 +29,15 @@ var LEFT = GM_getValue('LEFT', LEFT);
 var RIGHT = GM_getValue('RIGHT', RIGHT);
 var hlsdomain = GM_getValue('hlsdomain', hlsdomain);
 var livechat = GM_getValue('livechat', livechat);
+var total_direction = GM_getValue('total_direction', total_direction);
 GM_registerMenuCommand('↑', function() {var p = window.prompt(guide, UP);if(!p){return;};GM_setValue('UP', p);});
 GM_registerMenuCommand('↓', function() {var p = window.prompt(guide, DOWN);if(!p){return;};GM_setValue('DOWN', p);});
 GM_registerMenuCommand('←', function() {var p = window.prompt(guide, LEFT);if(!p){return;};GM_setValue('LEFT', p);});
 GM_registerMenuCommand('→', function() {var p = window.prompt(guide, RIGHT);if(!p){return;};GM_setValue('RIGHT', p);});
 GM_registerMenuCommand('HLS Force', function() {var p = window.prompt('Example: 1.com,2.com,3.com,4.com', hlsdomain);if(!p){return;};GM_setValue('hlsdomain', p);});
-GM_registerMenuCommand('Live Chat', function() {var p = window.prompt('true or false', livechat);if(!p){return;};if(p === 'true'){p=true}else{p=false};GM_setValue('livechat', p);});
+GM_registerMenuCommand('Live Chat: ' + livechat.toString(), function() {var v = livechat;if(v == true){GM_setValue('livechat', false);}else{GM_setValue('livechat', true);};window.location.reload()});
+GM_registerMenuCommand('Total Direction: ' + total_direction.toString(), function() {var v = total_direction;if(v == 4){GM_setValue('total_direction', 8);}else{GM_setValue('total_direction', 4);};window.location.reload()});
+
 console.log(UP, DOWN, LEFT, RIGHT, hlsdomain, livechat);
 
 var hlsdomain = hlsdomain.split(',');
