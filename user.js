@@ -102,6 +102,14 @@ user_pref("browser.sessionhistory.max_total_viewers", 0);
 user_pref("extensions.pocket.enabled", false);
 user_pref("accessibility.force_disabled", 1);
 
+// Disable Taskbar Preview
+user_pref("browser.taskbar.lists.enabled", false);
+user_pref("browser.taskbar.lists.frequent.enabled", false);
+user_pref("browser.taskbar.lists.maxListItemCount", 0);
+//user_pref("browser.taskbar.lists.refreshInSeconds", 2147483647);
+user_pref("browser.taskbar.lists.tasks.enabled", false);
+user_pref("browser.taskbar.previews.max", 0);
+
 // Optimize rendering speed
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-23570551
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27064564
