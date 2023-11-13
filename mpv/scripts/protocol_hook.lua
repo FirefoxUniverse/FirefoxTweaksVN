@@ -218,34 +218,45 @@ local function getDomain(url)
     return split(url, '/')[2]
 end
 
-local function livestreamer(url, referer, proxy, hls)
-    print('Streamlink: '..url)
-    local url2 = '"'..url..'"'
-    local cmd = ''
-    local cmd2 = url2..' '..stream_quality..' '
-    --local cmdconfig = ''
-    local cmdconfig = ' --config='..cwd..'/streamlink.conf'
-    if osv == 'Windows' then
-        cmd = 'run '..cwd..'/streamlink/bin/streamlink.exe '
-    else
-        cmd = 'run streamlink '
-    end
-    --if (url:find("hls://") == 1) then
-    if (hls == true) then
-        cmdconfig = cmdconfig..' --player-args=--demuxer-lavf-format=mpegts '
-    end
-    if proxy ~= false then
-        cmd2 = cmd2..'--http-proxy='..proxy..'/'
-    end
-    print(referer)
+local function run_native(arguments)
+    if osv == 'Windows' then 
+        table.insert(arguments, 1, 'run') 
+        mp.command_native(arguments) 
+    else 
+        mp.command_native{name = 'subprocess', args = arguments} 
+    end 
+end
 
-    cmd = cmd..cmd2..cmdconfig
-    if referer ~= '' then
-        cmd = cmd..' --http-header=Referer='..referer
-    end
-    print(cmd)
-    mp.command(cmd)
-    --mp.command('quit')
+local function livestreamer(url, referer, proxy, hls) 
+    local streamlink 
+    local config 
+    if osv == 'Windows' then 
+        streamlink = cwd..'/streamlink/bin/streamlink.exe' 
+        config = '--config='..cwd..'/streamlink.conf' 
+    else 
+        streamlink = 'streamlink' 
+    end 
+    local arguments = {} 
+    table.insert(arguments, streamlink) 
+    table.insert(arguments, url) 
+    table.insert(arguments, stream_quality) 
+    if osv == 'Windows' then 
+        table.insert(arguments, config) 
+    end 
+    if (hls == true) then   
+        table.insert(arguments, '--player-args=--demuxer-lavf-format=mpegts ') 
+    end 
+  
+    if referer ~= '' then 
+        table.insert(arguments, '--http-header=Referer='..referer) 
+    end 
+ 
+    if proxy ~= false then 
+        table.insert(arguments, '--http-proxy='..proxy) 
+    end 
+    print(dump(arguments)) 
+    run_native(arguments)
+    --mp.command('quit') 
 end
 
 -- Thank to pTalent: https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27975348
