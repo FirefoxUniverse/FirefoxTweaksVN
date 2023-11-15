@@ -10,6 +10,19 @@
 // @run-at           document-start
 // ==/UserScript==
 
+function GM_getParentByTagName(el, tagName) {
+  tagName = tagName.toLowerCase();
+  if (el.tagName.toLowerCase() == tagName) {
+    return el;
+  }
+  while (el && el.parentNode) {
+    el = el.parentNode;
+    if (el.tagName && el.tagName.toLowerCase() == tagName) {
+      return el;
+    }
+  }
+  return "undefined";
+}
 function parseResponseHeaders(headerStr) {
     var headers = {};
     if (!headerStr) {
