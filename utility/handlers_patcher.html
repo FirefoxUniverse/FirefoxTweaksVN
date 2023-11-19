@@ -9,12 +9,39 @@
 <textarea id="hp" style="width:100%;height:100%"></textarea>
 
 <script>
+function getOS() {
+  const userAgent = window.navigator.userAgent,
+      platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+      macosPlatforms = ['macOS', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+  let os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (/Linux/.test(platform)) {
+    os = 'Linux';
+  }
+
+  return os;
+}
+var path = "D:\\mpv\\mpv.exe";
+var os = getOS();
+if (os != 'Windows') {
+  path = 'mpv';
+}
 var ele = document.getElementById('hp');
 if (ele.addEventListener) {
   ele.addEventListener('input', function(e) {
     console.log(ele.value);
     var json = JSON.parse(ele.value);
-    json["schemes"]["mpv"] = {"action":2,"handlers":[{"name":"MPV","path":"D:\\mpv\\mpv.exe"}]}
+    json["schemes"]["mpv"] = {"action":2,"handlers":[{"name":"MPV","path":path}]}
     
     ele.value = JSON.stringify(json, null, 2);
     this.focus();
