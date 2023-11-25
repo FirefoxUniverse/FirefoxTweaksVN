@@ -81,8 +81,9 @@ user_pref("image.mem.decode_bytes_at_a_time", 32768);
 user_pref("browser.startup.preXulSkeletonUI", false);
 
 //Snappier tooltips
-user_pref("ui.tooltipDelay", 60); 
-user_pref("browser.overlink-delay", 10); 
+user_pref("ui.tooltipDelay", 60);
+user_pref("ui.submenuDelay", 0);
+user_pref("browser.overlink-delay", 10);
 
 //Enable Alt-Tab-like switch, Ctrl+Tab
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
