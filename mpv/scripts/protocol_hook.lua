@@ -50,10 +50,11 @@ end
 
 local function exedir()
     --local path1 = debug.getinfo(1).source
-    local path = mp.find_config_file('.')
-    if path:match('portable_config') then
-        return path:gsub('/portable_config/.*', '')
-    end
+    local path = mp.command_native({'expand-path', '~~home/'})
+    print(path)
+    path = path:gsub('/portable_config.*', '')
+    print(path)
+    return path
 end
 
 local osv = getOS()
