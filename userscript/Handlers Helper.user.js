@@ -4,7 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     2.6
+// @version     2.7
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -62,15 +62,19 @@ function attachDrag(elem) {
     return btoa(url).replace(/\//g, "_").replace(/\+/g, "-").replace(/\=/g, "");
   }
 
+  function popout(chaturl) {
+      window.open(chaturl, "", "fullscreen=no,toolbar=no,titlebar=no,menubar=no,location=no,width=" + live_window_width + ",height=" + live_window_height);
+  }
+
   function livechatopener(url) {
         var nurl = new URL(url);
         if (nurl.href.indexOf('www.youtube.com/watch') != -1 || nurl.href.indexOf('m.youtube.com/watch') != -1) {
-        window.open("https://www.youtube.com/live_chat?is_popout=1&v=" + nurl.search.split("v=")[1], "", "fullscreen=no,toolbar=no,titlebar=no,menubar=no,location=no,width=" + live_window_width + ",height=" + live_window_height)
+            popout("https://www.youtube.com/live_chat?is_popout=1&v=" + nurl.search.split("v=")[1]);
         } else if (nurl.href.match('https://.*?.twitch.tv/.')) {
-        window.open("https://www.twitch.tv/popout" + nurl.pathname + "/chat?popout=", "", "fullscreen=no,toolbar=no,titlebar=no,menubar=no,location=no,width=" + live_window_width + ",height=" + live_window_height)
+            popout("https://www.twitch.tv/popout" + nurl.pathname + "/chat?popout=");
         }  else if (nurl.href.match('https://.*?.nimo.tv/.')) {
-        var streamid = document.querySelector('a[href="' + nurl.pathname + '"] .nimo-player.n-as-full').id.replace('home-hot-', '');
-        window.open("https://www.nimo.tv/popout/chat/" + streamid, "", "fullscreen=no,toolbar=no,titlebar=no,menubar=no,location=no,width=" + live_window_width + ",height=" + live_window_height)
+            var streamid = document.querySelector('a[href="' + nurl.pathname + '"] .nimo-player.n-as-full').id.replace('home-hot-', '');
+            popout("https://www.nimo.tv/popout/chat/" + streamid);
         }
   }
 
