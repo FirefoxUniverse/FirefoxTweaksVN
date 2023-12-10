@@ -364,7 +364,7 @@ local function ytdl(url, referer, mode)
     if mode == 'audio' then
         cmd2 = ' -f ba --extract-audio '
     else
-        cmd2 = ' -f bv+ba '
+        cmd2 = ' -f bv+ba/b '
     end
     cmd = cmd..cmd2..url2
     mp.command(cmd)
