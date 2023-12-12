@@ -154,6 +154,9 @@ user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Contai
 user_pref("cookiebanners.service.mode", 2);
 user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 
+// Disable Restricted Domains
+user_pref("extensions.webextensions.restrictedDomains, "");
+
 /*** [SECTION 0300]: QUIETER FOX ***/
 user_pref("_user.js.parrot", "0300 syntax error: the parrot's not pinin' for the fjords!");
 /** RECOMMENDATIONS ***/
