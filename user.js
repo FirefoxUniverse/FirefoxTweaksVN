@@ -24,6 +24,18 @@ user_pref("browser.display.use_system_colors", false);
 user_pref("layout.css.forced-colors.enabled", false);
 */
 
+//Dark Mode style Dark Reader
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#232627");
+user_pref("browser.display.foreground_color", "#E4E3DF");
+user_pref("browser.anchor_color", "#92BBDE");
+user_pref("browser.visited_color", "#ED944F");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
 //Gray Mode
 /*
 user_pref("browser.active_color", "blue");
