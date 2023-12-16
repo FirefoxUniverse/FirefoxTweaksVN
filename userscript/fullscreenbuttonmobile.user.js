@@ -3,7 +3,7 @@
 // @namespace   Toggle Fullscreen Button For Mobile Browsers Scripts
 // @match       http*://*/*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      -
 // @description 11/14/2023, 10:20:53 PM
 // ==/UserScript==
