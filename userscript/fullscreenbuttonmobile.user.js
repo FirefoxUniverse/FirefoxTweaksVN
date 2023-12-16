@@ -35,6 +35,7 @@
 		var btn = document.createElement('button');
 		ele.style.position = 'fixed';
     ele.style.opacity = '0';
+    ele.style.zIndex = '999999';
 		ele.style.left = (e.clientX - 20).toString() + 'px';
 		ele.style.top = (e.clientY - 10).toString() + 'px';
 		btn.innerHTML = 'Fullscreen';
