@@ -147,9 +147,15 @@ user_pref("network.trr.mode", 2);
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27409530
 user_pref("network.http.rcwn.enabled", false);
 
-// Enabled Sleeping Tab
+// Enable Add Search
+user_pref("browser.urlbar.update2.engineAliasRefresh", true);
+
+// Enable Sleeping Tab
 user_pref("floorp.tabsleep.enabled", true);
 user_pref("floorp.tabsleep.tabTimeoutMinutes", 6);
+
+// Enable PWA
+user_pref("browser.ssb.enabled", true);
 
 // Force RAM cache, uncomment // to enable
 // https://voz.vn/t/cach-ep-firefox-luu-cache-tren-ram-ma-khong-can-ramdisk.664955/
