@@ -164,6 +164,11 @@ user_pref("browser.ssb.enabled", true);
 //user_pref("browser.cache.memory.capacity", 524288);
 //user_pref("browser.cache.memory.max_entry_size", 512000);
 
+// Disable FastBack to save RAM
+//user_pref("fission.bfcacheInParent", false);
+//user_pref("fission.disableSessionHistoryInParent", true);
+//user_pref("browser.sessionhistory.max_total_viewers", 0);
+
 // Enable Multi-Account Container
 user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
 user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
