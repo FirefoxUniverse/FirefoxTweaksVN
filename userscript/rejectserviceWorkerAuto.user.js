@@ -7,7 +7,7 @@
 // @grant       GM_setValue
 // @grant       GM_addStyle
 // @grant       GM_registerMenuCommand
-// @version     1.0
+// @version     1.1
 // @author      -
 // @description 10/4/2023, 5:07:06 PM
 // ==/UserScript==
@@ -69,7 +69,7 @@ try {
         GM_registerMenuCommand("+", plus);
         GM_registerMenuCommand("-", minus);
     }
-    GM_registerMenuCommand("Set " + name, set);
+    //GM_registerMenuCommand("Set " + name, set);
     if (hostarray.includes(location.hostname)) {
         GM_registerMenuCommand("Inject " + name, inject);
         GM_registerMenuCommand("Auto-Inject on " + location.hostname, removeHost);
