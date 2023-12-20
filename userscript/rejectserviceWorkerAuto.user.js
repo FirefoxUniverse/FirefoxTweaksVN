@@ -7,7 +7,7 @@
 // @grant       GM_setValue
 // @grant       GM_addStyle
 // @grant       GM_registerMenuCommand
-// @version     1.1
+// @version     1.2
 // @author      -
 // @description 10/4/2023, 5:07:06 PM
 // ==/UserScript==
@@ -64,7 +64,7 @@ function removeHost() {
 // This should work in Violentmonkey and Tampermonkey, but unfortunately not Greasemonkey.
 try {
     hostarray = JSON.parse(GM_getValue(prefix, "[]"));
-    console.log(hostarray);
+    //console.log(hostarray);
     if (typeof (value) == 'number') {
         GM_registerMenuCommand("+", plus);
         GM_registerMenuCommand("-", minus);
