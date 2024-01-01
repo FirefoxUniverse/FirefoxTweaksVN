@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name              InsantPage Super Lite NoObs
 // @namespace         Need4Speed
+// @description       -
 // @version           1.4.1
 // @author            -
 // @match             *://*/*
 // @noframes
 // @run-at            document-idle
 // @grant             none
+// @downloadURL https://update.greasyfork.org/scripts/483622/InsantPage%20Super%20Lite%20NoObs.user.js
+// @updateURL https://update.greasyfork.org/scripts/483622/InsantPage%20Super%20Lite%20NoObs.meta.js
 // ==/UserScript==
 
 /*! instant.page v5.2.0 - (C) 2019-2023 Alexandre Dieulot - https://instant.page/license */
