@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name              InsantPage Super Lite
+// @name              InstantPage Super Lite
 // @namespace         Need4Speed
-// @version           1.4.4
+// @version           1.4.5
 // @author            -
 // @match             *://*/*
 // @noframes
 // @run-at            document-idle
 // @grant             none
+// @description Preload/Prefetch page on hovering.
 // ==/UserScript==
 
 let t, e, n, o, i, a = null,
