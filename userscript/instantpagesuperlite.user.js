@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name              InsantPage Super Lite NoObs
+// @name              InstantPage Super Lite NoObs
 // @namespace         Need4Speed
 // @description       Preload/Prefetch page on hovering.
 // @version           1.4.2
