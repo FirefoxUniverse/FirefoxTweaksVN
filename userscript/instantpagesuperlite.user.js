@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name              InsantPage Super Lite NoObs
 // @namespace         Need4Speed
-// @description       -
-// @version           1.4.1
+// @description       Preload/Prefetch page on hovering.
+// @version           1.4.2
 // @author            -
 // @match             *://*/*
 // @noframes
