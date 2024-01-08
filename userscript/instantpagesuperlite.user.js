@@ -10,6 +10,8 @@
 // @description Preload/Prefetch page on hovering.
 // ==/UserScript==
 
+var EXCLUDE = new RegExp(/login|logout|register|signin|signup|signout|pay|create|edit|download|del|reset|submit|doubleclick|googleads|exit|unread/);
+
 let t, e, n, o, i, a = null,
 	s = 65,
 	c = new Set;
@@ -63,6 +65,7 @@ function h(t) {
 }
 
 function m(o) {
+  if (o.href.match(EXCLUDE)) {return}
 	if (o && o.href && (!n || "instant" in o.dataset)) {
 		if (o.origin != location.origin) {
 			if (!(e || "instant" in o.dataset) || !a) return
