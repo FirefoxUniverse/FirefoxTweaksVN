@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              InstantPage Super Lite
 // @namespace         Need4Speed
-// @version           1.4.5
+// @version           1.4.6
 // @author            -
 // @match             *://*/*
 // @noframes
