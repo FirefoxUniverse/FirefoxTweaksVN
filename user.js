@@ -138,8 +138,8 @@ user_pref("network.IDN_show_punycode", true);
 
 // GoogleDNS + ECS
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-24688026
-user_pref("network.trr.uri", "https://doh3.dns.nextdns.io/");
-user_pref("network.trr.custom_uri", "https://doh3.dns.nextdns.io/");
+user_pref("network.trr.uri", "https://dns.nextdns.io/");
+user_pref("network.trr.custom_uri", "https://dns.nextdns.io/");
 user_pref("network.trr.mode", 2);
 //user_pref("network.trr.disable-ECS", false);
 
