@@ -210,6 +210,7 @@
                 _r_text.call(this).then((text) => {
                     resolve(text);
                     if (checkContent(text)) doM3U({ url: this.url, content: text });
+                    if (checkUrl(this.url)) doM3U({ url: this.url, content: text });
                 }).catch(reject);
             });
         }
@@ -219,10 +220,10 @@
             this.addEventListener("load", () => {
                 try {
                     let content = this.responseText;
-                    if (checkContent(content)) doM3U({ url: args[1], content });
+                    if (checkContent(content)) doM3U({ url: args[1], content: content });
                 } catch { }
             });
-            // checkUrl(args[1]);
+            if (checkUrl(args[1])) doM3U({ url: args[1], content: content });
             return _open.apply(this, args);
         }
 
@@ -582,7 +583,7 @@
     }
 
 })();
-
+/*
 (function () {
     'use strict';
 
@@ -752,3 +753,4 @@
     }
 
 })();
+*/
