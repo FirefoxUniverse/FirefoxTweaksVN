@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MPV-M3U8 Video Detector and Downloader
 // @name:en      MPV-M3U8 Video Detector and Downloader
-// @version      1.4.4
+// @version      1.5.1
 // @description:en  Automatically detect the m3u8 video of the page and download it completely. Once detected the m3u8 link, it will appear in the upper right corner of the page. Click download to jump to the m3u8 downloader.
 // @icon         https://tools.thatwind.com/favicon.png
 // @author       -
