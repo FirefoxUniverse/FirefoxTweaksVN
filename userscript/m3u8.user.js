@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MPV-M3U8 Video Detector and Downloader
 // @name:en      MPV-M3U8 Video Detector and Downloader
-// @version      1.5.1
+// @version      1.5.2
 // @description:en  Automatically detect the m3u8 video of the page and download it completely. Once detected the m3u8 link, it will appear in the upper right corner of the page. Click download to jump to the m3u8 downloader.
 // @icon         https://tools.thatwind.com/favicon.png
 // @author       -
@@ -203,13 +203,14 @@
         //     if (checkUrl(args[0])) doM3U({ url: args[0] });
         //     return _fetch(...args);
         // }
+        if (location.href.match(/^.*?socolive.*?$/)) {
         var sfetch = unsafeWindow.fetch;
         unsafeWindow.fetch = new Proxy(sfetch, {
             apply: function(target, thisArg, args) {
                 console.log(target, thisArg, args);
                 let proceed = true;
                 try {
-                    if (checkUrl(args[0])) doM3U({ url: args[0], content: args[0] });
+                    if (args[0].indexOf(".flv") != -1) doM3U({ url: args[0], content: args[0] });
                 } catch(ex) {
                     console.log(ex);
                 }
@@ -218,6 +219,7 @@
                     : Promise.resolve(new Response());
             }
         });
+        }
         const _r_text = unsafeWindow.Response.prototype.text;
         unsafeWindow.Response.prototype.text = function () {
             return new Promise((resolve, reject) => {
@@ -244,7 +246,7 @@
 
         function checkUrl(url) {
             url = new URL(url, location.href);
-            if (url.pathname.indexOf(".m3u8") != -1 || url.pathname.indexOf(".m3u") != -1 || url.pathname.indexOf(".mpd") != -1 || url.pathname.indexOf(".flv") != -1) {
+            if (url.pathname.indexOf(".m3u8") != -1 || url.pathname.indexOf(".m3u") != -1) {
                 // 发现
                 return true;
             }
