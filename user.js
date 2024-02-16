@@ -106,10 +106,10 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 3600000);
 user_pref("browser.sessionstore.interval", 3600000);
-user_pref("browser.sessionstore.collect_zoom", false);
-user_pref("browser.sessionstore.privacy_level", 2);
+//user_pref("browser.sessionstore.collect_zoom", false);
+//user_pref("browser.sessionstore.privacy_level", 2);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
-user_pref("browser.sessionhistory.max_total_viewers", 0);
+//user_pref("browser.sessionhistory.max_total_viewers", 0);
 
 // Disable Pocket and Accessibility
 user_pref("extensions.pocket.enabled", false);
