@@ -104,7 +104,7 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Reduce disk read/write
-user_pref("browser.sessionstore.idleDelay", 3600000);
+//user_pref("browser.sessionstore.idleDelay", 3600000);
 user_pref("browser.sessionstore.interval", 3600000);
 //user_pref("browser.sessionstore.collect_zoom", false);
 //user_pref("browser.sessionstore.privacy_level", 2);
