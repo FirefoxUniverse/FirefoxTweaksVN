@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MPV-M3U8 Video Detector and Downloader
 // @name:en      MPV-M3U8 Video Detector and Downloader
-// @version      1.5.5
+// @version      1.5.6
 // @description:en  Automatically detect the m3u8 video of the page and download it completely. Once detected the m3u8 link, it will appear in the upper right corner of the page. Click download to jump to the m3u8 downloader.
 // @icon         https://tools.thatwind.com/favicon.png
 // @author       -
@@ -462,6 +462,7 @@
             addEventListener("mousemove", mousemove);
             addEventListener("mouseup", mouseup);
         });
+
     })();
 
 
@@ -472,8 +473,24 @@
     let count = 0;
     let shownUrls = [];
 
-
+    if (window.top !== window.self) {
+        showVideo({
+            type: "iframe",
+            url: new URL(location.href),
+            duration: "unknown",
+            async download() {
+                mgmapi.openInTab(
+                    `https://tools.thatwind.com/tool/m3u8downloader#${new URLSearchParams({
+                        m3u8: url.href,
+                        referer: location.href,
+                        filename: (await getTopTitle()) || ""
+                    })}`
+                );
+            }
+        });
+    }
     function doVideos() {
+
         for (let v of Array.from(document.querySelectorAll("video"))) {
             if (v.duration && v.src && v.src.startsWith("http") && (!shownUrls.includes(v.src))) {
                 const src = v.src;
