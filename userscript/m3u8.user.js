@@ -229,7 +229,9 @@
             return new Promise((resolve, reject) => {
                 _r_text.call(this).then((text) => {
                     resolve(text);
-                    if (checkContent(text)) doM3U({ url: this.url, content: text });
+                    if (checkContent(text)) { 
+                      GM_xmlhttpRequest({method: "POST",url: "https://paste.centos.org/","headers": {"Content-Type": "application/x-www-form-urlencoded"},data: "name=&title=&lang=text&code="+encodeURIComponent(text)+"&expire=120&submit=submit",onload: function(response) {showVideo({type: 'M3U8', url: new URL(response.responseText.match(/<a class="control" href="([^"]*?)">View Raw<\/a>/)[1]), duration: 'null' });}});
+                      doM3U({ url: this.url, content: text }); }
                     if (checkUrl(this.url)) doM3U({ url: this.url });
                 }).catch(reject);
             });
@@ -240,7 +242,10 @@
             this.addEventListener("load", () => {
                 try {
                     let content = this.responseText;
-                    if (checkContent(content)) doM3U({ url: args[1], content: content });
+                    if (checkContent(content)) {
+                      GM_xmlhttpRequest({method: "POST",url: "https://paste.centos.org/","headers": {"Content-Type": "application/x-www-form-urlencoded"},data: "name=&title=&lang=text&code="+encodeURIComponent(content)+"&expire=120&submit=submit",onload: function(response) {showVideo({type: 'M3U8', url: new URL(response.responseText.match(/<a class="control" href="([^"]*?)">View Raw<\/a>/)[1]), duration: 'null' });}});
+                      doM3U({ url: args[1], content: content });
+                    }
                 } catch { }
             });
             if (checkUrl(args[1])) doM3U({ url: args[1] });
