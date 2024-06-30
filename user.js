@@ -136,15 +136,20 @@ user_pref("content.notify.ontimer", true);
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-25938099
 user_pref("network.IDN_show_punycode", true);
 
-//Disable IPv6
+// Disable IPv6
 //user_pref("network.dns.disableIPv6", true);
 
-// GoogleDNS + ECS
+// GoogleDNS
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-24688026
 //user_pref("network.trr.uri", "https://dns.nextdns.io/");
 //user_pref("network.trr.custom_uri", "https://dns.nextdns.io/");
 //user_pref("network.trr.mode", 2);
+
+// Enable ECS
 //user_pref("network.trr.disable-ECS", false);
+
+// Enable Kyber to access blocked websites
+user_pref("security.tls.enable_kyber", true);
 
 // Reduce network request
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27409530
