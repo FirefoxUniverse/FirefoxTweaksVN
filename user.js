@@ -136,6 +136,9 @@ user_pref("content.notify.ontimer", true);
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-25938099
 user_pref("network.IDN_show_punycode", true);
 
+//Disable IPv6
+//user_pref("network.dns.disableIPv6", true);
+
 // GoogleDNS + ECS
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-24688026
 //user_pref("network.trr.uri", "https://dns.nextdns.io/");
