@@ -20,8 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: sudo apt install libssl-dev
-      - uses: MinoruSekine/setup-scoop@v4
-      - run: scoop install openssl
       - name: Compile and release
         uses: rust-build/rust-build.action@v1.4.5
         env:
