@@ -23,7 +23,7 @@ jobs:
         with:
           RUSTTARGET: ${{ matrix.target }}
           ARCHIVE_TYPES: ${{ matrix.archive }}
-          SRC_DIR: '/mpv/scripts/ytproxy/'
+          SRC_DIR: './mpv/scripts/ytproxy/'
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
