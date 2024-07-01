@@ -1,4 +1,4 @@
-name: "Build and Deploy"
+name: "Build ytproxy"
 on: workflow_dispatch
 
 jobs:
