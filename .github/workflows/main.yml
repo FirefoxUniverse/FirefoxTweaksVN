@@ -28,6 +28,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Binary
-          path: /mpv/scripts/ytproxy/
-            ${{ steps.compile.outputs.BUILT_ARCHIVE }}
-            ${{ steps.compile.outputs.BUILT_CHECKSUM }}
+          path: mpv/scripts/ytproxy/
