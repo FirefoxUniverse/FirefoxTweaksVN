@@ -11,6 +11,8 @@ jobs:
         include:
           - target: x86_64-pc-windows-gnu
             archive: zip
+          - target: x86_64-pc-windows-msvc
+            archive: zip
           - target: x86_64-unknown-linux-gnu
             archive: tar.gz tar.xz tar.zst
           - target: x86_64-unknown-linux-musl
@@ -32,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Binary
-          path: mpv/scripts/ytproxy/target/release/deps/
+          path: mpv/scripts/ytproxy/target/
       - name: Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
