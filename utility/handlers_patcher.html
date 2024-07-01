@@ -33,8 +33,10 @@ function getOS() {
 }
 var path = "D:\\mpv\\mpv.exe";
 var os = getOS();
-if (os != 'Windows') {
-  path = 'mpv';
+if (os == 'Linux') {
+  path = '/usr/bin/mpv ';
+} else if (os == 'Mac OS') {
+  path = 'mpv ';
 }
 var ele = document.getElementById('hp');
 if (ele.addEventListener) {
