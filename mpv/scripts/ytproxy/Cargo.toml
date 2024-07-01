@@ -1,0 +1,16 @@
+# To generate mitm cert and key:
+# openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -passout pass:"third-wheel" -subj "/C=US/ST=private/L=province/O=city/CN=hostname.example.com"
+# see: https://github.com/campbellC/third-wheel
+
+[package]
+name = "http-ytproxy"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+third-wheel = "0.6"
+argh = "0.1"
+
+[dependencies.tokio]
+version = "1"
