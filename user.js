@@ -155,6 +155,9 @@ user_pref("security.tls.enable_kyber", true);
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27409530
 user_pref("network.http.rcwn.enabled", false);
 
+// Fix Facebook time (ESR <= 115)
+user_pref("dom.textMetrics.fontBoundingBox.enabled", true);
+
 // Enable Add Search
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);
 
