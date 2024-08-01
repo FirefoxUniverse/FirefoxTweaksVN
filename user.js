@@ -289,10 +289,6 @@ user_pref("browser.display.focus_ring_width", 0);
 user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
 
-/** COOKIE BANNER HANDLING ***/
-user_pref("cookiebanners.service.mode", 1);
-user_pref("cookiebanners.service.mode.privateBrowsing", 1);
-
 /** FULLSCREEN NOTICE ***/
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
@@ -310,10 +306,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
 /** POCKET ***/
 user_pref("extensions.pocket.enabled", false);
-
-/** DOWNLOADS ***/
-user_pref("browser.download.always_ask_before_handling_new_types", true);
-user_pref("browser.download.manager.addToRecentDocs", false);
 
 /** PDF ***/
 user_pref("browser.download.open_pdf_attachments_inline", true);
