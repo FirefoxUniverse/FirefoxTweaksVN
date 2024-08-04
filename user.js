@@ -170,8 +170,8 @@ user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
 user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
 
 // Enable Cookie Banner Protection
-user_pref("cookiebanners.service.mode", 2);
-user_pref("cookiebanners.service.mode.privateBrowsing", 2);
+//user_pref("cookiebanners.service.mode", 2);
+//user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 
 // Disable Restricted Domains
 user_pref("extensions.webextensions.restrictedDomains", "");
