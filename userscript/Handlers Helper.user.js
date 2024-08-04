@@ -4,7 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     2.7
+// @version     2.8
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -86,7 +86,7 @@ function attachDrag(elem) {
     var hls = false;
     console.log(attr, type)
     for (i in hlsdomain) {
-      if (attr.indexOf(hlsdomain[i]) != -1) {
+      if (attr.indexOf(hlsdomain[i]) != -1 || document.domain.indexOf(hlsdomain[i]) != -1) {
         if (type == 'stream') {
           attr = attr.replace(/https?:/, 'hls:');
         }
