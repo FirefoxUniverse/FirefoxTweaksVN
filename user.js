@@ -108,6 +108,20 @@ user_pref("content.notify.ontimer", true);
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-25938099
 user_pref("network.IDN_show_punycode", true);
 
+// Prefer no animation
+// https://voz.vn/p/33057189/
+user_pref("ui.prefersReducedMotion", 1);
+
+// Maximize bandwidth
+// https://voz.vn/p/33049233/
+user_pref("network.http.http3.cc_algorithm", 0);
+
+// Tweak bytecode
+// https://voz.vn/p/32603773/
+user_pref("browser.cache.jsbc_compression_level", 2);
+user_pref("dom.script_loader.bytecode_cache.strategy", -1);
+//user_pref("javascript.options.mem.gc_balanced_heap_limits", true);
+
 // Enable old clear history dialog
 user_pref("privacy.sanitize.useOldClearHistoryDialog", true);
 
