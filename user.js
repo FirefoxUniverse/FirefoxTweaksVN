@@ -242,18 +242,6 @@ user_pref("network.http.pacing.requests.enabled", false);
 user_pref("network.dnsCacheExpiration", 3600);
 user_pref("network.ssl_tokens_cache_capacity", 10240);
 
-/** SPECULATIVE LOADING ***/
-user_pref("network.dns.disablePrefetch", true);
-user_pref("network.dns.disablePrefetchFromHTTPS", true);
-user_pref("network.prefetch-next", false);
-user_pref("network.predictor.enabled", false);
-user_pref("network.predictor.enable-prefetch", false);
-
-/** EXPERIMENTAL ***/
-user_pref("layout.css.grid-template-masonry-value.enabled", true);
-user_pref("dom.enable_web_task_scheduling", true);
-user_pref("dom.security.sanitizer.enabled", true);
-
 /** TELEMETRY ***/
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
