@@ -1,6 +1,6 @@
 /******
 *    name: Firefox Max Speed UserJS
-* version: 126
+* version: 115+
 *    urls: https://github.com/FirefoxUniverse/FirefoxTweaksVN/main/user.js [repo]
 * license: MIT
 * HOWTO: Go to about:support -> Open Profile Folder -> Save user.js -> Restart (https://voz.vn/goto/post?id=27527209)
