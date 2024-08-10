@@ -1,3 +1,12 @@
+/******
+*    name: Firefox Max Speed UserJS
+* version: 126
+*    urls: https://github.com/FirefoxUniverse/FirefoxTweaksVN/main/user.js [repo]
+* license: MIT
+* HOWTO: Go to about:support -> Open Profile Folder -> Save user.js -> Restart (https://voz.vn/goto/post?id=27527209)
+* REVERT: https://voz.vn/goto/post?id=27496381
+******/
+
 //Dark Mode native: remove /* and */ to activate
 
 //Dark Mode style 1
