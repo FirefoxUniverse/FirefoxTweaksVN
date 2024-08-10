@@ -65,6 +65,7 @@ user_pref("layout.css.forced-colors.enabled", false);
 user_pref("browser.startup.preXulSkeletonUI", false);
 
 //Snappier tooltips
+user_pref("ui.tooltip.delay_ms", 60);
 user_pref("ui.tooltipDelay", 60);
 user_pref("ui.submenuDelay", 0);
 user_pref("browser.overlink-delay", 10);
