@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Handlers Helper
+// @name        Handlers Helper PotPlayer
 // @include       *://*/*
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -22,7 +22,7 @@ var hlsdomain = 'cdn.animevui.com';
 var UP = 'pipe';
 var DOWN = 'ytdl';
 var LEFT = 'stream';
-var RIGHT = 'mpv';
+var RIGHT = 'potplayer';
 var UP = GM_getValue('UP', UP);
 var DOWN = GM_getValue('DOWN', DOWN);
 var LEFT = GM_getValue('LEFT', LEFT);
@@ -131,7 +131,8 @@ function attachDrag(elem) {
       app = type;
     }
     var bs = GM_btoaUrl(s);
-    var url2 = 'mpv://' + app + '/' + bs + '/' + "?referer=" + GM_btoaUrl(location.href);
+    //var url2 = 'mpv://' + app + '/' + bs + '/' + "?referer=" + GM_btoaUrl(location.href);
+    var url2 = 'potplayer://'+s;
     if (subs != '') {
       url2 = url2 + '?subs=' + GM_btoaUrl(subs);
     }
