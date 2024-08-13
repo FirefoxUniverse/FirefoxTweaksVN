@@ -108,11 +108,11 @@ user_pref("browser.taskbar.previews.max", 0);
 // Optimize rendering speed
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-23570551
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27064564
-user_pref("nglayout.initialpaint.delay", 2000);
-user_pref("nglayout.initialpaint.delay_in_oopif", 2000);
-user_pref("content.notify.backoffcount", 0);
-user_pref("content.notify.interval", 2000000);
-user_pref("content.notify.ontimer", true);
+user_pref("nglayout.initialpaint.delay", 250);
+user_pref("nglayout.initialpaint.delay_in_oopif", 250);
+//user_pref("content.notify.backoffcount", 0);
+//user_pref("content.notify.interval", 2000000);
+//user_pref("content.notify.ontimer", true);
 
 // Enable punycode
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-25938099
