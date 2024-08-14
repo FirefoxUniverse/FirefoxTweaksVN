@@ -165,7 +165,14 @@ user_pref("dom.textMetrics.fontBoundingBox.enabled", true);
 // [2] https://bugzilla.mozilla.org/show_bug.cgi?id=1796525 
 // [3] https://bugzilla.mozilla.org/show_bug.cgi?id=1800412 
 // [4] https://reddit.com/r/firefox/comments/107fj69/how_can_i_disable_the_efficiency_mode_on_firefox/ 
-user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false); 
+user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+
+// PREF: use bigger packets
+// Reduce Firefox's CPU usage by requiring fewer application-to-driver data transfers.
+// However, it does not affect the actual packet sizes transmitted over the network.
+// [1] https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
+user_pref("network.buffer.cache.size", 262144); // 256 kb; default=32768 (32 kb)
+user_pref("network.buffer.cache.count", 128); // default=24
 
 // Enable Add Search
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);
