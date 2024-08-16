@@ -171,8 +171,9 @@ user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
 // Reduce Firefox's CPU usage by requiring fewer application-to-driver data transfers.
 // However, it does not affect the actual packet sizes transmitted over the network.
 // [1] https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
-user_pref("network.buffer.cache.size", 262144); // 256 kb; default=32768 (32 kb)
-user_pref("network.buffer.cache.count", 128); // default=24
+// Can cause crashing: https://github.com/BrowserWorks/Waterfox/releases/tag/G6.0.10
+user_pref("network.buffer.cache.size", 32768); // 256 kb; default=32768 (32 kb)
+user_pref("network.buffer.cache.count", 24); // default=24
 
 // Enable Add Search
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);
