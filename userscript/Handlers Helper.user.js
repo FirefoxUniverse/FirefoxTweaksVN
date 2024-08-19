@@ -311,7 +311,7 @@ document.addEventListener('mouseover', function(e) {
 });
 
 if (document.domain == 'www.youtube.com' || document.domain == 'm.youtube.com') {
-    let state = GM_getValue('hh_mobile', false);
+    let state = GM_getValue('hh_mobile', 'unset');
     let dm = location.host || '';
     let dmc = dm.charAt(0) || '';
     if (state == true && dmc == 'w') {
