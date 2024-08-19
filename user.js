@@ -69,6 +69,17 @@ user_pref("browser.display.use_system_colors", false);
 user_pref("layout.css.forced-colors.enabled", false);
 */
 
+//Light Mode
+/*
+user_pref("browser.active_color", "#EE0000");
+user_pref("browser.display.background_color", "#FFFFFF");
+user_pref("browser.display.foreground_color", "#FBFBFE");
+user_pref("browser.anchor_color", "#0000EE");
+user_pref("browser.visited_color", "#551A8B");
+user_pref("browser.display.document_color_use", 1);
+user_pref("browser.display.use_system_colors", true);
+user_pref("layout.css.forced-colors.enabled", true);
+*/
 //Tweaks
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
