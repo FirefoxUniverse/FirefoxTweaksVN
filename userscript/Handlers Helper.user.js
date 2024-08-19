@@ -6,7 +6,7 @@
 // @grant       GM_deleteValue
 // @grant       GM_addStyle
 // @grant       GM_registerMenuCommand
-// @version     3.4
+// @version     3.6
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
