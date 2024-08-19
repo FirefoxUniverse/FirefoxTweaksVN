@@ -4,6 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
+// @grant       GM_addStyle
 // @grant       GM_registerMenuCommand
 // @version     3.4
 // @author      -
@@ -339,5 +340,8 @@ if (document.domain == 'www.youtube.com' || document.domain == 'm.youtube.com') 
     } else if (dmc == 'm') {
         addMenuCommand("Switch to YouTube Dekstop persistently", "http://www.youtube.com/?persist_app=1&app=desktop", true);
         addMenuCommand("Switch to YouTube Dekstop temporarily", "http://www.youtube.com/?persist_app=0&app=desktop", false);
+    }
+    if (dmc == 'm') {
+      GM_addStyle('ytm-rich-item-renderer {width: 33%!important;margin: 1px!important;}');
     }
 }
