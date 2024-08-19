@@ -4,7 +4,7 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
-// @version     3.1
+// @version     3.2
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -320,17 +320,23 @@ if (document.domain == 'www.youtube.com' || document.domain == 'm.youtube.com') 
     }
     function addMenuCommand(s, url, b) {
         GM_registerMenuCommand(s, function () {
+            if (b == true) {
             if (url.indexOf('m.youtube.com') != -1) {
               GM_setValue('hh_mobile', true);
             } else if (url.indexOf('www.youtube.com') != -1) {
               GM_setValue('hh_mobile', false);
+            }
+            } else {
+              GM_deleteValue('hh_mobile');
             }
             location.replace(url);
         });
     }
     if (dmc == 'w') {
         addMenuCommand("Switch to YouTube Mobile persistently", "https://m.youtube.com/?persist_app=1&app=m", true);
+        addMenuCommand("Switch to YouTube Mobile temporarily", "https://m.youtube.com/?persist_app=0&app=m", false);
     } else if (dmc == 'm') {
-        addMenuCommand("Switch to YouTube Dekstop persistently", "http://www.youtube.com/?persist_app=1&app=desktop", false);
+        addMenuCommand("Switch to YouTube Dekstop persistently", "http://www.youtube.com/?persist_app=1&app=desktop", true);
+        addMenuCommand("Switch to YouTube Dekstop temporarily", "http://www.youtube.com/?persist_app=0&app=desktop", false);
     }
 }
