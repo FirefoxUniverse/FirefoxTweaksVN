@@ -3,8 +3,9 @@
 // @include       *://*/*
 // @grant       GM_getValue
 // @grant       GM_setValue
+// @grant       GM_deleteValue
 // @grant       GM_registerMenuCommand
-// @version     3.2
+// @version     3.3
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
