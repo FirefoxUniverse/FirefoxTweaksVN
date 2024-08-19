@@ -342,6 +342,6 @@ if (document.domain == 'www.youtube.com' || document.domain == 'm.youtube.com') 
         addMenuCommand("Switch to YouTube Dekstop temporarily", "http://www.youtube.com/?persist_app=0&app=desktop", false);
     }
     if (dmc == 'm') {
-      GM_addStyle('ytm-rich-item-renderer {width: 33%!important;margin: 1px!important;}');
+      GM_addStyle('ytm-rich-item-renderer {width: 33%!important;margin: 1px!important;padding: 0px!important;}');
     }
 }
