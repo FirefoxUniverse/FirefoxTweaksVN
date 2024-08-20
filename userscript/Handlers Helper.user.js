@@ -6,7 +6,7 @@
 // @grant       GM_deleteValue
 // @grant       GM_addStyle
 // @grant       GM_registerMenuCommand
-// @version     3.6
+// @version     3.7
 // @author      -
 // @description Helper for protocol_hook.lua
 // @namespace Violentmonkey Scripts
@@ -315,11 +315,11 @@ if (document.domain == 'www.youtube.com' || document.domain == 'm.youtube.com') 
     let state = GM_getValue('hh_mobile', 'unset');
     let dm = location.host || '';
     let dmc = dm.charAt(0) || '';
-    if (state == true && dmc == 'w') {
+    /*if (state == true && dmc == 'w') {
       location.host = location.host.replace('www.youtube.com', 'm.youtube.com');
     } else if (state == false && dmc == 'm') {
       location.host = location.host.replace('m.youtube.com', 'www.youtube.com');
-    }
+    }*/
     function addMenuCommand(s, url, b) {
         GM_registerMenuCommand(s, function () {
             if (b == true) {
