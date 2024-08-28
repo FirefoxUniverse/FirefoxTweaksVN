@@ -96,6 +96,11 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 //Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+//Enable Ctrl+Shift+Alt+I
+user_pref("devtools.chrome.enabled", true);
+user_pref("devtools.debugger.remote-enabled", true);
+user_pref("devtools.debugger.prompt-connection", true);
+
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 180);
 user_pref("browser.sessionstore.interval", 3600000);
