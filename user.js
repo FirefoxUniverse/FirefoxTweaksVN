@@ -99,7 +99,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 //Enable Ctrl+Shift+Alt+I
 user_pref("devtools.chrome.enabled", true);
 user_pref("devtools.debugger.remote-enabled", true);
-user_pref("devtools.debugger.prompt-connection", true);
+user_pref("devtools.debugger.prompt-connection", false);
 
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 180);
