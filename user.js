@@ -229,6 +229,9 @@ user_pref("browser.fullscreen.animate", true);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
 
+// Modal-less mpv:// handler
+user_pref("network.protocol-handler.external.mpv", true);
+
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
